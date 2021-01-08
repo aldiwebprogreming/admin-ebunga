@@ -126,15 +126,15 @@
 
          
 
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i><span id="shop" class="badge bg-danger"></span></a>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-cart-plus"></i><span id="shop" class="badge bg-danger"></span></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Order
+              <div class="dropdown-header">Order Terbaru
                 <div class="float-right">
                   <a href="#">Mark All As Read</a>
                 </div>
               </div>
 
-              <div id="order_data" class="dropdown-list-content dropdown-list-icons">
+              <div id="order_baru" class="dropdown-list-content dropdown-list-icons">
                
               </div>
             
@@ -337,9 +337,9 @@ $(document).ready(function(){
 
   function ambilDataOrder(){
 
-    $.get("<?= base_url() ?>get_data/ambil_dataorder", function(data, success){
+    $.get("<?= base_url() ?>get_data/index", function(data, success){
 
-        $("#order_data").html(data);
+        $("#order_baru").html(data);
 
     });
 
@@ -349,7 +349,7 @@ $(document).ready(function(){
 
   function ambiDataUser(){
     $.get("<?= base_url() ?>get_data/ambil_datauser", function(data, success){
-      $("#userorder").html(data);
+      $("#user_baru").html(data);
     });
   }
 

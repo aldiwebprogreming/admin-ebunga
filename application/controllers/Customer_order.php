@@ -158,6 +158,24 @@
  		$this->dompdf->stream("cetak_customer_order", array('Attachment' => 0));
 	}
 
+	function detail(){
+
+	$id = $this->input->get('id');
+
+
+	$data['title'] = "Detail Order";
+
+	$data['order'] = $this->m_data->get_det($tabel='tbl_customer_order', $id);
+	$this->load->view('template2/header', $data);
+	$this->load->view('detail/det_order', $data);
+	$this->load->view('template2/footer');
+
+
+
+
+
+	}
+
 	
 
 }

@@ -1,12 +1,18 @@
- <?php foreach ($order as $data_order) {  ?>
+ <?php foreach ($order as $data) {  ?>
 
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="far fa-user"></i>
+                <a href="<?= base_url() ?>customer_order/detail?id=<?= $data['id']?>" class="dropdown-item">
+                  <div class="dropdown-item-icon bg-danger text-white">
+                    <i class="fas fa-cart-plus"></i>
                   </div>
                   <div class="dropdown-item-desc">
-                    <b>You</b> and <b>Dedik Sugiharto</b> are now friends
-                    <div class="time">10 Hours Ago</div>
+                    <b><?= $data['customer'] ?></b> 
+                    <div class="time">
+                 
+
+                      
+                    </div>
+
                   </div>
                 </a>
+
                <?php } ?>
