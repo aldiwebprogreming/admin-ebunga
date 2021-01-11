@@ -17,6 +17,7 @@
 
 
  		$data['user'] = $this->m_data->get_data("tbl_user");
+ 		$data['footer'] = "Laporan data user dicetak pada tanggal :";
  		$this->load->view('admin/cetak_user',$data);
 
  		$paper_size ="A4";

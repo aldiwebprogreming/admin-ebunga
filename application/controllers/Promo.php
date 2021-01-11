@@ -181,6 +181,7 @@ function cetak_data(){
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "PROMO EBUNGA";
+		$data['footer'] = "Laporan data promo ebunga dicetak pada tanggal :";
 		$data['promo'] = $this->m_data->get_data("tbl_promo");
  		$this->load->view('cetak/cetak_promo',$data);
 

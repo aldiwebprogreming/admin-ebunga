@@ -210,6 +210,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "SELLER EBUNGA";
+		$data['footer'] = "Laporan data seller ebunga dicetak pada tanggal :";
 		$data['seller'] = $this->m_data->get_data("tbl_seller");
  		$this->load->view('cetak/cetak_seller',$data);
 

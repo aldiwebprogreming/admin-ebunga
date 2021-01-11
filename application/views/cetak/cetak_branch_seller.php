@@ -68,6 +68,49 @@ table tr:nth-child(even) {
 
 					foreach ($branch_seller as $data) {
 
+							$alamat = $data['alamat'];
+							$id_kel = substr($alamat, 0, 10);
+							// echo $id_kel ;
+
+							$id_kec = substr($alamat,11,6);
+							// echo $id_kec ;
+
+							$id_kab = substr($alamat,11,4);
+							// echo $id_kab ;
+
+							$id_prov = substr($alamat,23,2);
+
+
+							 $prov = $this->db->get_where('tbl_provinsi', array('id_prov' => $id_prov ))->result_array();
+
+                                  foreach ($prov as $data_prov) {
+                                   
+                                  }
+
+                                  $kab = $this->db->get_where('tbl_kabupaten', array('id_kab' => $id_kab ))->result_array();
+
+                                  foreach ($kab as $data_kab) {
+                                   
+                                  }
+
+                                  $kec = $this->db->get_where('tbl_kecamatan', array('id_kec' => $id_kec ))->result_array();
+
+                                  foreach ($kec as $data_kec) {
+                                   
+                                  }
+
+                                  $kel = $this->db->get_where('tbl_kelurahan', array('id_kel' => $id_kel ))->result_array();
+
+                                  foreach ($kel as $data_kel) {
+                                   
+                                  }
+
+                                 $list_alamat = $data_kel['nama']."-".$data_kec['nama']."-".$data_kab['nama']."-".$data_prov['nama'];
+
+
+
+
+
 			 ?>
 
 		<tr>
@@ -75,7 +118,7 @@ table tr:nth-child(even) {
 			<td><?= $data['kd_branch']; ?></td>
 			<td><?= $data['nama_branch'] ?></td>
 			<td><?= $data['id_seller'] ?></td>
-			<td><?= $data['alamat'] ?></td>
+			<td><?= $list_alamat; ?></td>
 			<td><?= $data['phone'] ?></td>
 			<td><?= $data['email'] ?></td>
 			<td><?= $data['waktu_pengajuan'] ?></td>
@@ -89,6 +132,13 @@ table tr:nth-child(even) {
 
 			<?php } ?>
 	</table>
+
+	<div class="" style="position: absolute; top :100%">
+		<hr class="" style="border: 1px solid; color: black;" > 
+		<small style="font-style: italic;">	<?= $footer; ?>  <?= date('m-d-Y'); ?> </small>
+
+	</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

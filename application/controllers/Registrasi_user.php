@@ -90,6 +90,7 @@ class Registrasi_user extends CI_controller
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "REGISTRASI USER";
+		$data['footer'] = "Laporan data registrasi user di cetak pada tanggal :";
 		$data['registrasi'] = $this->m_data->get_data("tbl_registrasi_user");
  		$this->load->view('cetak/cetak_registrasi',$data);
 
@@ -101,6 +102,21 @@ class Registrasi_user extends CI_controller
  		$this->dompdf->load_html($html);
  		$this->dompdf->render();
  		$this->dompdf->stream("cetak_registrasi", array('Attachment' => 0));
+		}
+
+
+		function detail(){
+
+		$data['title'] = "Detail Registrasi User";
+		$data['sub_title'] = "Detail  registrasi user";
+		$id = $this->input->get('id');
+		$data['registrasi'] = $this->m_data->get_det($tabel='tbl_registrasi_user', $id);
+
+
+		$this->load->view('template2/header', $data);
+		$this->load->view('detail/det_registrasiuser', $data);
+		$this->load->view('template2/footer');
+
 		}
 
 

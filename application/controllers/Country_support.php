@@ -126,6 +126,7 @@ class Country_support extends CI_Controller{
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "COUNTRY SUPPORT EBUNGA";
+		$data['footer'] = "Laporan data country support dicetak pada tanggal :";
 		$data['country'] = $this->m_data->get_data("tbl_country_support");
  		$this->load->view('cetak/cetak_country',$data);
 

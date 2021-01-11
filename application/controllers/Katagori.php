@@ -288,6 +288,8 @@ class Katagori extends CI_Controller
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "KATEGORI PRODUK EBUNGA";
+		$data['footer'] = "Laporan data kategori dicetak pada tanggal :";
+
 		$data['kategori'] = $this->m_data->get_data("tbl_kategori_produk");
  		$this->load->view('cetak/cetak_kategori',$data);
 

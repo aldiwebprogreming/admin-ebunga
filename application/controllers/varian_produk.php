@@ -126,6 +126,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "VARIANT PRODUK EBUNGA";
+		$data['footer'] = "Laporan data varian produk ebunga dicetak pada tanggal :";
 		$data['variant'] = $this->m_data->get_data("tbl_variant");
  		$this->load->view('cetak/cetak_variant_produk',$data);
 

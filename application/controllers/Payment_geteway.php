@@ -122,6 +122,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = " PAYMENT GETEWAY";
+		$data['footer']= "Laporan data payment geteway dicetak pada tanggal :";
 		$data['payment'] = $this->m_data->get_data("tbl_payment_gateway");
  		$this->load->view('cetak/cetak_payment',$data);
 

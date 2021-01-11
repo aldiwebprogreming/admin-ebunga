@@ -48,6 +48,7 @@ class Komplain extends CI_Controller
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "KOMPLAIN";
+		$data['footer'] = "Laporan data komplain dicetak pada tanngal :";
 		$data['komplain'] = $this->m_data->get_data("tbl_komplain");
  		$this->load->view('cetak/cetak_komplain',$data);
 

@@ -243,6 +243,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = " BRANCH SELLER EBUNGA";
+		$data['footer'] = "Laporan data branch seller dicetak pada tanggal :";
 		$data['branch_seller'] = $this->m_data->get_data("tbl_branch_seller");
  		$this->load->view('cetak/cetak_branch_seller',$data);
 

@@ -72,7 +72,7 @@ table tr:nth-child(even) {
 			<td><?= $data['kd_bank_account']; ?></td>
 			<td><?= $data['tipe_user'] ?></td>
 			<td><?= $data['id_user'] ?></td>
-			<td><?= $data['id_bank'] ?></td>
+			<td><?= $data['kd_bank'] ?></td>
 			<td><?= $data['account_name'] ?></td>
 			<td><?= $data['account_number'] ?></td>
 			<td><?= $data['main'] ?></td>
@@ -85,6 +85,13 @@ table tr:nth-child(even) {
 
 			<?php } ?>
 	</table>
+
+	<div class="" style="position: absolute; top :100%">
+		<hr class="" style="border: 1px solid; color: black;" > 
+		<small style="font-style: italic;">	<?= $footer; ?>  <?= date('m-d-Y'); ?> </small>
+
+	</div>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

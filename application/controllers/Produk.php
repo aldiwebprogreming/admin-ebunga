@@ -184,6 +184,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "PRODUK EBUNGA";
+		$data['footer'] = 'Laporan data produk dicetak pada tanggal :';
 		$data['produk'] = $this->m_data->get_data("tbl_produk");
  		$this->load->view('cetak/cetak_produk',$data);
 

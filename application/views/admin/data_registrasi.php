@@ -60,80 +60,13 @@
                                                     
                                                     <a href="<?= base_url() ?>registrasi_user/edit_registrasi?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
 
-                                                    <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a>
-
+                                                     <a href="<?= base_url() ?>registrasi_user/detail?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
 
                                               
                                             </tr>
 
 
-         <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer bg-whitesmoke br">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-                                            <!-- Modal -->
-<div class="modal fade" id="mymodal<?= $data['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Detail Registrasi User</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
        
-     
-       <b>Kode Registrasi</b><p><?= $data['kd_registrasi'] ?></p> 
-       <hr>
-        <b>Token Registrasi</b> <p><?= $data['token_registrasi'] ?></p> 
-        <hr>
-        <b>Full Name</b> <p><?= $data['full_name'] ?></p> 
-        <hr>
-        <b>Phone Number</b> <p><?= $data['phone_number'] ?></p> 
-        <hr>
-        <b>Email</b> <p><?= $data['email'] ?></p> 
-        <hr>
-        <!-- <b>Password</b> <p><?= $data['password'] ?></p>  -->
-        <hr>
-        <b>Waktu Registrasi</b> <p><?= $data['waktu_registrasi'] ?></p> 
-        <hr>
-         <b>Referall Code</b> <p><?= $data['referall_code'] ?></p>
-         <hr> 
-         <b>Status Aktifasi</b> <p><?= $data['status_aktivasi'] ?></p> 
-         <hr>
-         <b>Waktu Aktifasi</b> <p><?= $data['waktu_aktivasi'] ?></p> 
-
-
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
                                         <?php } ?>

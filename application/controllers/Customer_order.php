@@ -145,6 +145,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "CUSTOMER ORDER";
+		$data['footer'] = "Laporan data cusomter dicetak pada tanggal :";
 		$data['customer_order'] = $this->m_data->get_data("tbl_customer_order");
  		$this->load->view('cetak/cetak_customer_order',$data);
 

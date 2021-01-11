@@ -58,66 +58,17 @@
     
         <ul class="navbar-nav navbar-right">
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-user"></i><span id="user" class="badge bg-success"></span></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
+           <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">User New
                 <div class="float-right">
-                  <a href="#">Mark All As Read</a>
+                  <a href="#"></a>
                 </div>
               </div>
-              <!-- <div class="dropdown-list-content dropdown-list-message">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle">
-                    <div class="is-online"></div>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b>
-                    <p>Hello, Bro!</p>
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-2.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Dedik Sugiharto</b>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-3.png" class="rounded-circle">
-                    <div class="is-online"></div>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Agung Ardiansyah</b>
-                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-4.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Ardian Rahardiansyah</b>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                    <div class="time">16 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle">
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Alfa Zulkarnain</b>
-                    <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div> -->
+
+              <div id="user_baru" class="dropdown-list-content dropdown-list-icons">
+               
+              </div>
+            
               <div class="dropdown-footer text-center">
                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>
               </div>
@@ -128,9 +79,9 @@
 
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="fas fa-cart-plus"></i><span id="shop" class="badge bg-danger"></span></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Order Terbaru
+              <div class="dropdown-header">Order New
                 <div class="float-right">
-                  <a href="#">Mark All As Read</a>
+                  <a href="#"></a>
                 </div>
               </div>
 
@@ -182,18 +133,25 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th"></i> <span>Data Master</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="<?= base_url() ?>user/data_user">User</a></li>
+                   <li>   <a class="nav-link" href="<?= base_url() ?>customer/data_customer/">Customer</a></li>
+                     <li> <a class="nav-link" href="<?= base_url() ?>customer_order/data_customer_order/">Customer Order</a></li>
+                  <li><a class="nav-link" href="<?= base_url() ?>Komplain/data_komplain/">Komplain</a></li>
+
+                  <li><a class="nav-link" href="<?= base_url() ?>operator/data_operator/">Operator</a></li>
+                
+                 
                   <li>  <a class="nav-link" href="<?= base_url() ?>registrasi_user/data_registrasi/">Registrasi User</a></li>
+                   <li>  <a class="nav-link" href="<?= base_url() ?>katagori/sub_kategori/"> Sub Katagori</a></li>
+
+                   <li><a class="nav-link" href="<?= base_url() ?>user/data_user">User</a></li>
 <!-- 
                   <li> <a class="nav-link" href="<?= base_url() ?>produk/data_produk">Produk</a></li>
                   <li>  <a class="nav-link" href="<?= base_url() ?>katagori/data_katagori/"> Katagori Produk</a></li> -->
-                  <li>  <a class="nav-link" href="<?= base_url() ?>katagori/sub_kategori/"> Sub Katagori</a></li>
-
+               
                 <!--   <li>  <a class="nav-link" href="<?= base_url() ?>variasi_produk/data_variasi_produk/">Variasi Produk</a></li> -->
                 <!--   <li>   <a class="nav-link" href="<?= base_url() ?>promo/data_promo/">Promo</a></li> -->
                  <!--  <li> <a class="nav-link" href="<?= base_url() ?>bank_account/data_bank_account/">Bank Account</a></li> -->
-                  <li>   <a class="nav-link" href="<?= base_url() ?>customer/data_customer/">Customer</a></li>
-                  <li> <a class="nav-link" href="<?= base_url() ?>customer_order/data_customer_order/">Customer Order</a></li>
+                 
 
                   <!--  <li><a class="nav-link" href="<?= base_url() ?>blog/data_blog/">Blog</a></li> -->
 
@@ -202,9 +160,6 @@
  -->
                    <!--   <li><a class="nav-link" href="<?= base_url() ?>branch_seller/data_branch_seller/">Branch Seller</a></li> -->
 
-                  <li><a class="nav-link" href="<?= base_url() ?>Komplain/data_komplain/">Komplain</a></li>
-
-                  <li><a class="nav-link" href="<?= base_url() ?>operator/data_operator/">Operator</a></li>
                 </ul>
               </li>
 
@@ -249,13 +204,14 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users-cog"></i> <span>Pengaturan</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="<?= base_url() ?>Payment_geteway/data_payment">Payament Geteway</a></li>
-                  <li>  <a class="nav-link" href="<?= base_url() ?>promo/data_promo/">Promo</a></li>
-                  <li>  <a class="nav-link" href="<?= base_url() ?>blog/data_blog/">Blog</a></li>
+                 <li>  <a class="nav-link" href="<?= base_url() ?>address_list/data_address_list/">Address List</a></li>
                   <li>  <a class="nav-link" href="<?= base_url() ?>bank_account/data_bank_account/">Bank Account</a></li>
+                  <li>  <a class="nav-link" href="<?= base_url() ?>blog/data_blog/">Blog</a></li>
                   <li>  <a class="nav-link" href="<?= base_url() ?>country_support/data_countrySupport">Country Support</a></li>
                   <li>  <a class="nav-link" href="#">Coverage Area</a></li>
-                  <li>  <a class="nav-link" href="<?= base_url() ?>address_list/data_address_list/">Address List</a></li>
+                  <li><a class="nav-link" href="<?= base_url() ?>Payment_geteway/data_payment">Payament Geteway</a></li>
+                  <li>  <a class="nav-link" href="<?= base_url() ?>promo/data_promo/">Promo</a></li>
+                
                   <li>  <a class="nav-link" href="#">Setting Ebunga</a></li>
 
                 </ul>
@@ -274,8 +230,8 @@
                   <li>  <a class="nav-link" href="#">Profit</a></li>
 
                   <li> <a class="nav-link" href="#">Pesanan</a></li>
-                  <li>  <a class="nav-link" href="#">Customer</a></li>
-                   <li>  <a class="nav-link" href="#">Seller</a></li>
+                 <!--  <li>  <a class="nav-link" href="#">Customer</a></li>
+                   <li>  <a class="nav-link" href="#">Seller</a></li> -->
                   
                 </ul>
               </li>
@@ -318,40 +274,50 @@ $(document).ready(function(){
 
 
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
 
-  setInterval(function(){
+//   setInterval(function(){
+            
+//            ambilDataOrder();
+//             ambilDataUser();
 
-           ambilDataOrder();
-            ambilDataUser();
 
 
-    }, 100  );
+
+//     }, 100  );
 
  
 
 
-})
+// })
 
 
-  function ambilDataOrder(){
+//   function ambilDataOrder(){
 
-    $.get("<?= base_url() ?>get_data/index", function(data, success){
+//     $.get("<?= base_url() ?>get_data/index", function(data, success){
 
-        $("#order_baru").html(data);
+//         $("#order_baru").html(data);
 
-    });
+//     });
 
     
-  }
+//   }
 
 
-  function ambiDataUser(){
-    $.get("<?= base_url() ?>get_data/ambil_datauser", function(data, success){
-      $("#user_baru").html(data);
-    });
-  }
+//   function ambilDataUser(){
+//     $.get("<?= base_url() ?>get_data/ambil_datauser", function(data, success){
+//       $("#user_baru").html(data);
+//     });
+//   }
+
+
+
+//   function sound(){
+
+//         var bel = new Audio('https://www.meramukoding.com/wp-content/uploads/2020/05/doorbell.mp3');
+//         bel.play();
+//   }
 
 
 </script>  

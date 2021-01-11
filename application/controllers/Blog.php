@@ -148,6 +148,7 @@
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "BLOG EBUNGA";
+		$data['footer'] = "Laporan data blog dicetak pada tanggal :";
 		$data['blog'] = $this->m_data->get_data("tbl_blog");
  		$this->load->view('cetak/cetak_blog',$data);
 

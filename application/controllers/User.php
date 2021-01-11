@@ -61,19 +61,11 @@
 
 				$input = $this->db->insert('tbl_user', $data);
 
-				if ($input) {
+				
 					 $this->session->set_flashdata('message', 'swal("Sukses!", "Data berhasil ditambahkan", "success");');
 
 				redirect('user/tambah_user');
-					
-				} else {
-
-
-					 $this->session->set_flashdata('message', 'swal("Gagal!", "Data gagal ditambahkan", "error");');
-
-				redirect('user/tambah_user');
-
-				}
+			
 
 
 
@@ -157,6 +149,18 @@
 		$data['user'] = $this->m_data->get_det1($tabel='tbl_user', $id);
 		$this->load->view('admin/selecet_user', $data);
 		}
+	}
+
+
+	function detail(){
+
+		$id = $this->input->get('id');
+		$data['title'] = "Detail User";
+
+		$data['user'] = $this->db->get_where('tbl_user', array('id' => $id))->result_array();
+		$this->load->view('template2/header', $data);
+		$this->load->view('detail/det_user', $data);
+		$this->load->view('template2/footer');
 	}
 
 

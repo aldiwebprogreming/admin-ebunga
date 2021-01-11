@@ -141,6 +141,7 @@ public function hapus_bk_account(){
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "BANK ACCOUNT EBUNGA";
+		$data['footer'] = "Laporan data bank account dicetak pada tanggal :";
 		$data['bank_account'] = $this->m_data->get_data("tbl_bank_account");
  		$this->load->view('cetak/cetak_bank_account',$data);
 
@@ -169,5 +170,7 @@ public function hapus_bk_account(){
 
 
 	}
+
+
 
  ?>

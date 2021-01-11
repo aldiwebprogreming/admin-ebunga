@@ -122,6 +122,7 @@ function cetak_data(){
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "OPERATOR EBUNGA";
+		$data['footer'] = "Laporan data operator ebunga dicetak pada tanggal :";
 		$data['oprator'] = $this->m_data->get_data("tbl_operator");
  		$this->load->view('cetak/cetak_oprator',$data);
 

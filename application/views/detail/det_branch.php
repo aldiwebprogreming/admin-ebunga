@@ -15,9 +15,35 @@
 
 
 
-                        <?php foreach ($branch as $data) {
-                         
-                        } ?>      
+
+
+                        <?php
+
+
+                     
+
+
+
+                          foreach ($branch as $data) {
+                            # code...
+                          }
+                          
+                          $alamat = $data['alamat'];
+                          $id_kel = substr($alamat, 0, 10);
+                          // echo $id_kel ;
+
+                          $id_kec = substr($alamat,11,6);
+                           // echo $id_kec ;
+
+                            $id_kab = substr($alamat,11,4);
+                           // echo $id_kab ;
+
+                             $id_prov = substr($alamat,23,2);
+                           // echo $id_prov ;
+                         ?>        
+
+
+                   
                                 
                     <div class="card-body">
                       <form method="POST" action="">
@@ -41,11 +67,78 @@
                                   <p><?= $data['id_seller'] ?></p>
                             </div>
                             <hr>
+
+                             <?php 
+
+                                  $prov = $this->db->get_where('tbl_provinsi', array('id_prov' => $id_prov ))->result_array();
+
+                                  foreach ($prov as $data_prov) {
+                                   
+                                  }
+
+                             ?>
+
+
                             <div class="mb-3">
-                              <label for="" class="form-label"><strong>Alamat</strong></label>
-                                 <p><?= $data['alamat'] ?></p>
+                              <label for="" class="form-label"><strong>Provinsi</strong></label>
+                                 <p><?= $data_prov['nama'] ?></p>
                             </div>
                             <hr>
+
+                             <?php 
+
+                                  $kab = $this->db->get_where('tbl_kabupaten', array('id_kab' => $id_kab ))->result_array();
+
+                                  foreach ($kab as $data_kab) {
+                                   
+                                  }
+
+                             ?>
+
+
+                            <div class="mb-3">
+                              <label for="" class="form-label"><strong>Kabupaten</strong></label>
+                                 <p><?= $data_kab['nama'] ?></p>
+                            </div>
+                            <hr>
+
+                             <?php 
+
+                                  $kec = $this->db->get_where('tbl_kecamatan', array('id_kec' => $id_kec ))->result_array();
+
+                                  foreach ($kec as $data_kec) {
+                                   
+                                  }
+
+                             ?>
+
+
+                            <div class="mb-3">
+                              <label for="" class="form-label"><strong>Kecamatan</strong></label>
+                                 <p><?= $data_kec['nama'] ?></p>
+                            </div>
+                            <hr>
+
+
+
+                             <?php 
+
+                                  $kel = $this->db->get_where('tbl_kelurahan', array('id_kel' => $id_kel ))->result_array();
+
+                                  foreach ($kel as $data_kel) {
+                                   
+                                  }
+
+                             ?>
+
+
+                            <div class="mb-3">
+                              <label for="" class="form-label"><strong>Kelurahan</strong></label>
+                                 <p><?= $data_kel['nama'] ?></p>
+                            </div>
+                            <hr>
+
+
 
                             <div class="mb-3">
                               <label for="" class="form-label"><strong>Phone</strong></label>

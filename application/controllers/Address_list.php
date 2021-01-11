@@ -130,6 +130,7 @@ class Address_list extends CI_Controller
 		$this->load->library('dompdf_gen');
 
 		$data['judul'] = "ADDRESS LIST";
+		$data['footer'] = "Laporan address list dicetak pada tanggal ";
 		$data['address_list'] = $this->m_data->get_data("tbl_address_list");
  		$this->load->view('cetak/cetak_address_list',$data);
 
