@@ -11,7 +11,13 @@
                 <div class="card">
                   <div class="card-header">
                     <h4><?= $sub_title ?></h4>
-                  </div>       
+                  </div>    
+
+                  <div id="loader" style=" position: fixed; left: 40%;">
+                 
+                  </div>   
+
+                   
                                 
                                 <div class="card-body">
                                  <a href="<?= base_url() ?>Branch_seller/tambah_branch" class ="btn btn-primary mb-4"> Tambah Branc Seller</a> 
@@ -23,7 +29,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Kd Branch</th>
+                                              <th>Kd Branch</th>
                                                 <th>Nama Branch</th>
                                                 <th>Id seller</th>
                                                 <th>Alamat</th>
@@ -103,20 +109,24 @@
                                                 <td>
                                                     <?php
                                                       if ($data['status_branch'] == 'active') { ?>
-                                                         <a href="<?= base_url() ?>branch_seller/status_branch_seller?id=<?= $data['id'] ?>" class="badge rounded-pill btn btn-primary" onclick="return confirm('Apakah ingin mendisable branch seller ini ?')"><?= $data['status_branch'] ?></a>
+                                                         <a id="status" href="<?= base_url() ?>branch_seller/status_branch_seller?id=<?= $data['id'] ?>" class="badge rounded-pill btn btn-primary" onclick="return confirm('Apakah ingin mendisable branch seller ini ?')" id="statuss"><?= $data['status_branch'] ?></a>
                                                     <?php } else { ?>
 
-                                                       <a href="<?= base_url() ?>branch_seller/status_branch_seller?id=<?= $data['id'] ?>" class="badge rounded-pill btn btn-danger" onclick="return confirm('Apakah ingin mengactive kan branch seller ini ?')"><?= $data['status_branch'] ?></a>
+                                                       <a id="status" href="<?= base_url() ?>branch_seller/status_branch_seller?id=<?= $data['id'] ?>" class="badge rounded-pill btn btn-danger" onclick="return confirm('Apakah ingin mengactive kan branch seller ini ?')"><?= $data['status_branch'] ?></a>
                                                      <?php } ?>
                                                  </td>
                                                 <td>
+
+
                                                     <a href="<?= base_url() ?>branch_seller/hapus_branch?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
 
                                               <a href="<?= base_url() ?>branch_seller/edit_branch?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
 
                                                   <a href="<?= base_url() ?>branch_seller/detail?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
 
+                                               
 
+                                                
                                               
                                             </tr>
 
@@ -143,6 +153,7 @@
            
          
         </section>
+
       </div>
       <footer class="main-footer">
         <div class="footer-left">
@@ -154,3 +165,27 @@
       </footer>
     </div>
   </div>
+
+<script>
+
+$(document).ready(function(){
+
+
+
+})
+
+
+function loading(){
+
+  $("#status").click(function(){
+
+      $.get("<?= site_url() ?>loader.php", function(status, data){
+
+        $("#loader").html(data);
+
+      })
+
+
+
+
+</script>
