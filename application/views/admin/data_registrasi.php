@@ -1,4 +1,11 @@
-
+<!-- loading -->
+ <div class="preloader">
+      <div class="loading">
+        <img src="<?= base_url() ?>loading/load1.gif" width="400">
+        
+      </div>
+    </div>
+  <!-- loading -->
 
       <!-- Main Content -->
       <div class="main-content">
@@ -96,4 +103,8 @@
   </div>
 
 
-
+<script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
+    </script>

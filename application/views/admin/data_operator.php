@@ -1,3 +1,13 @@
+<!-- loading -->
+ <div class="preloader">
+      <div class="loading">
+        <img src="<?= base_url() ?>loading/load1.gif" width="400">
+        
+      </div>
+    </div>
+  <!-- loading -->
+
+
   <div class="main-content">
         <section class="section">
           <div class="section-header">
@@ -136,5 +146,9 @@
   </div>
 
 
-
+<script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
+    </script>
                 

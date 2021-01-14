@@ -1,3 +1,13 @@
+
+<!-- loading -->
+ <div class="preloader">
+      <div class="loading">
+        <img src="<?= base_url() ?>loading/load1.gif" width="400">
+        
+      </div>
+    </div>
+  <!-- loading -->
+
  <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
@@ -45,57 +55,7 @@
 
                                                     <a href="<?= base_url() ?>daerah_administratif_3/edit_adminstratif3?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a> 
 
-                                                   <!--  <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a> -->
-
-
                                               
-                                            </tr>
-
-                                            <!-- Modal -->
-<!-- div class="modal fade" id="mymodal<?= $data['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Detail Komplain</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       
-     
-       <b>Kode Komplain</b><p><?= $data['kd_komplain'] ?></p> 
-       <hr>
-        <b>Name Transaction</b> <p><?= $data['kd_transaction'] ?></p> 
-        <hr>
-        <b>Customer Id</b> <p><?= $data['customer_id'] ?></p> 
-        <hr>
-        <b>Seller Id</b> <p><?= $data['seller_id'] ?></p> 
-        <hr>
-        <b>Waktu Komplain</b> <p><?= $data['waktu_komplain'] ?></p> 
-        <hr>
-        <b>Judul</b> <p><?= $data['judul'] ?></p> 
-        <hr>
-        <b>Isi</b> <p><?= $data['isi'] ?></p> 
-        <hr>
-         <b>Status</b> <p><?= $data['status'] ?></p>
-         <hr> 
-         <b>Operator Handle</b> <p><?= $data['operator_handle'] ?></p> 
-      
-
-
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
-</div> -->
-
 
 
                                         <?php } ?>
@@ -110,4 +70,8 @@
 
 
 
-                
+              <script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
+    </script>    

@@ -1,3 +1,10 @@
+ <div class="preloader">
+      <div class="loading">
+        <img src="<?= base_url() ?>loading/load1.gif" width="400">
+        
+      </div>
+    </div>
+
  <div class="main-content">
         <section class="section">
           <div class="section-header">
@@ -86,7 +93,6 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-         <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
           2.3.0
@@ -94,4 +100,11 @@
       </footer>
     </div>
   </div>
+
+
+  <script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
+    </script>
                 

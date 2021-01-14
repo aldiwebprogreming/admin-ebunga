@@ -32,6 +32,7 @@
    
     
 <script type="text/javascript" src="<?= base_url() ?>chartjs/Chart.js"></script>
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>loading/style.css">
 
 
 </head>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Kodinger">
@@ -9,7 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="<?php base_url() ?>assets2/css/my-login.css">
 </head>
 
+
+
 <body class="my-login-page" style="">
+
+	
+
+  
+
+   
 	<section class="h-100">
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">

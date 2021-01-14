@@ -1,3 +1,7 @@
+
+
+
+
  <div class="main-content">
         <section class="section">
           <div class="section-header">
@@ -216,3 +220,9 @@
 
 
   </script>
+
+  <script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
+    </script>
