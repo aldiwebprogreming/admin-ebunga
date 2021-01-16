@@ -137,3 +137,8 @@
   </div>
 
                 
+<script>
+    $(document).ready(function(){
+      $(".preloader").fadeOut('slow');
+    })
+    </script>

@@ -1,0 +1,165 @@
+<?php 
+
+ /**
+  * 
+  */
+ class Member extends CI_Controller
+ {
+ 	
+ 	function __construct()
+ 	{
+ 		parent:: __construct();
+ 		$this->load->model('m_data');
+ 		$this->load->library('form_validation');
+
+ 	}
+
+ 	function data_member(){
+
+ 		$data['title'] = 'Data member';
+ 		$data['sub_title'] = "Data Member";
+
+
+ 		$data['member'] = $this->m_data->get_data($tabel='tbl_member');
+
+
+ 		$this->load->view('template2/header', $data);
+ 		$this->load->view('admin/data_member', $data);
+ 		$this->load->view('template2/footer');
+ 	}
+
+
+ // 	function tambah_member(){
+
+
+ // 		$this->form_validation->set_rules('username','username','required');
+ // 		$this->form_validation->set_rules('full_name','full name','required');
+ // 		$this->form_validation->set_rules('email','email','required');
+ // 		$this->form_validation->set_rules('phone','phone','required');
+ // 		$this->form_validation->set_rules('country','required');
+ // 		$this->form_validation->set_rules('postal_code','postal code','required');
+ // 		$this->form_validation->set_rules('alamat','alamat','required');
+ // 		$this->form_validation->set_rules('kpt','ktp','required');
+ // 		$this->form_validation->set_rules('npwp','npwp','required');
+ // 		$this->form_validation->set_rules('siup','siup','required');
+ // 		$this->form_validation->set_rules('status','status','required');
+ // 		$this->form_validation->set_rules('suspend','suspend','required');
+
+
+
+ // 		if ($this->form_validation->run() == FALSE) {
+ 			
+ // 		$data['title'] = "Tambah member";
+ // 		$data['sub_title'] = "Tambah Member Baru";
+
+
+ // 		$data['provinsi'] = $this->m_data->get_data($tabel='tbl_provinsi');
+ // 		$data['country'] = $this->m_data->get_data($tabel='tbl_country_support');
+ // 		$this->load->view('template2/header', $data);
+ // 		$this->load->view('admin/tambah_member', $data);
+ // 		$this->load->view('template2/footer');
+
+ // 		} else {
+
+ // 			 $data = array(
+
+ // 			 'username' => $this->input->post('username'),
+ // 			'full_name' => $this->input->post('full_name'),
+ // 			'email' =>$this->input->post('email'),
+ // 			'phone' =>$this->input->post('phone'),
+ // 			'country' =>$this->input->post('country'),
+ // 			'provinsi' =>$this->input->post('provinsi'),
+ // 			'kabupaten' =>$this->input->post('kabupaten'),
+ // 			'kecamatan' =>$this->input->post('kecamatan'),
+ // 			'kelurahan' =>$this->input->post('kelurahan'),
+ // 			'postal_code' =>$this->input->post('postal_code'),
+ // 			'alamat' =>$this->input->post('alamat'),
+ // 			'ktp' =>$this->input->post('ktp'),
+ // 			'npwp' =>$this->input->post('npwp'),
+ // 			'siup' =>$this->input->post('siup'),
+ // 			'status' =>1,
+ // 			'suspend' =>$this->input->post('suspend')
+
+
+ // 			 	 );
+
+ 			
+ 		
+ // 			$input = $this->db->insert('tbl_operator',$data);
+
+ // 		$this->session->set_flashdata('message', 'swal("Sukses!", "Data berhasil ditambahkan", "success");');
+
+ // 		redirect('member/tambah_member');
+
+ 	
+
+ // 	}
+
+ // }
+
+
+ function tambah_member(){
+
+
+ 	$this->form_validation->set_rules('username', 'username', 'trim|required');
+ 	// $this->form_validation->set_rules('full_name', 'full name', 'trim|required');
+ 	// $this->form_validation->set_rules('email', 'email', 'trim|required');
+ 	// $this->form_validation->set_rules('phone', 'phone', 'trim|required');
+ 	// $this->form_validation->set_rules('postal_code', 'postal code', 'trim|required');
+ 	// $this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
+ 	// $this->form_validation->set_rules('kpt', 'kpt', 'trim|required');
+ 	// $this->form_validation->set_rules('npwp', 'npwp', 'trim|required');
+ 	// $this->form_validation->set_rules('siup', 'siup', 'trim|required');
+ 	// $this->form_validation->set_rules('suspend', 'suspend', 'trim|required');
+
+			
+			if ($this->form_validation->run() == FALSE) {
+				$data['title'] = "Tambah member";
+ 		$data['sub_title'] = "Tambah Member Baru";
+
+
+ 		$data['provinsi'] = $this->m_data->get_data($tabel='tbl_provinsi');
+ 		$data['country'] = $this->m_data->get_data($tabel='tbl_country_support');
+ 		$this->load->view('template2/header', $data);
+ 		$this->load->view('admin/tambah_member', $data);
+ 		$this->load->view('template2/footer');
+				
+			}
+			else {
+
+					
+				 $data = array(
+
+ 			 'username' => $this->input->post('username'),
+ 			'full_name' => $this->input->post('full_name'),
+ 			'email' =>$this->input->post('email'),
+ 			'phone' =>$this->input->post('phone'),
+ 			'country' =>$this->input->post('country'),
+ 			'provinsi' =>$this->input->post('provinsi'),
+ 			'kabupaten' =>$this->input->post('kabupaten'),
+ 			'kecamatan' =>$this->input->post('kecamatan'),
+ 			'kelurahan' =>$this->input->post('kelurahan'),
+ 			'postal_code' =>$this->input->post('postal_code'),
+ 			'alamat' =>$this->input->post('alamat'),
+ 			'ktp' =>$this->input->post('ktp'),
+ 			'npwp' =>$this->input->post('npwp'),
+ 			'siup' =>$this->input->post('siup'),
+ 			'status' =>1,
+ 			'suspend' =>$this->input->post('suspend')
+
+
+ 			 	 );
+
+					$input = $this->db->insert('tbl_member',$data);
+					if ($input) {
+						$this->session->set_flashdata('message', 'swal("Sukses!", "Data berhasil ditambahkan", "success");');
+
+					redirect('operator/tambah_member');
+					}
+
+			}
+
+ }
+ }
+
+ ?>
