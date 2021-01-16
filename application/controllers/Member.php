@@ -154,10 +154,37 @@
 					if ($input) {
 						$this->session->set_flashdata('message', 'swal("Sukses!", "Data berhasil ditambahkan", "success");');
 
-					redirect('operator/tambah_member');
+					redirect('member/tambah_member');
 					}
 
 			}
+
+ }
+
+ function hapus_member(){
+
+ 		$id = $this->input->get('id');
+		$this->db->delete('tbl_member', array('id' => $id));
+		redirect('member/data_member');
+ }
+
+
+
+ function detail_member(){
+
+ 		$data['title'] = "Detail member";
+ 		$data['sub_title'] = "Datail Member";
+
+ 		$tabel = "tbl_member";
+ 		$id = $this->input->get('id');
+ 		$data['member'] = $this->m_data->get_det($tabel, $id);
+		
+		$this->load->view('template2/header', $data);
+		$this->load->view('detail/detail_member', $data);
+		$this->load->view('template2/footer');
+
+
+
 
  }
  }

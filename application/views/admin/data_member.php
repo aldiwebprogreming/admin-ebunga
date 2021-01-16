@@ -66,11 +66,10 @@
                                                 <td><?= $data['phone'] ?></td>
                                                 <td><?= $data['country'] ?></td>
                                                 <td>
-                                                    <a href="<?= base_url() ?>operator/hapus_operator?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                    <a href="<?= base_url() ?>member/hapus_member?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
                                                     <a href="<?= base_url() ?>operator/edit_operator?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
 
-                                                    <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a>
-
+                                                  <a href="<?= base_url() ?>member/detail_member?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
 
                                               
                                             </tr>
