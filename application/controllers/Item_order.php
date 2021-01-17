@@ -11,6 +11,7 @@
  		parent:: __construct();
 
  		$this->load->model('m_data');
+ 		$this->load->library('form_validation');
  	}
 
  	function data_itemorder(){
@@ -39,6 +40,59 @@
  			$this->load->view('detail/detail_item_order', $data);
  			$this->load->view('template2/footer', $data);
 
+ 		}
+
+
+ 		function edit_item_order(){
+
+ 			$data['title'] = "Edit item order";
+ 			$data['sub_title'] = "Edit Item Order";
+
+ 			$id = $this->input->get('id');
+ 			$data['item_order'] = $this->m_data->get_det($tabel='tbl_item_order', $id);
+
+ 			$data['provinsi'] = $this->m_data->get_data($tabel="tbl_provinsi");
+ 			$this->load->view('template2/header', $data);
+ 			$this->load->view('admin/edit_itemorder', $data);
+ 			$this->load->view('template2/footer', $data);
+
+ 			if ($this->input->post('edit')) {
+ 				
+ 				$data =  array(
+ 					'kd_order' => $this->input->post('kd_order') ,
+ 					'kd_token_item' => $this->input->post('kd_token_item'), 
+ 					'kd_produk' => $this->input->post('kd_produk'),
+ 					'nama_penerima' => $this->input->post('nama_penerima'),
+ 					'email_penerima' =>$this->input->post('email_penerima') ,
+ 					'hp_penerima' =>$this->input->post('hp_penerima') ,
+ 					'tanggal_kirim' => $this->input->post('tanggal_kirim'),
+ 					'alamat_kirim' =>$this->input->post('alamat_kirim') ,
+ 					'kel_kirim' => $this->input->post('kel_kirim'),
+ 					'kec_kirim' => $this->input->post('kec_kirim'),
+ 					'kab_kirim' => $this->input->post('kab_kirim'),
+ 					'prov_kirim' => $this->input->post('prov_kirim'),
+ 					'message' => $this->input->post('message'),
+ 					'send_card_email' => $this->input->post('send_card_email'),
+ 					'waktu_kirim' => $this->input->post('waktu_kirim'),
+ 					'sub_total' => $this->input->post('sub_total'),
+ 					'disc' => $this->input->post('disc'),
+ 					'total' => $this->input->post('total')
+ 				);
+
+ 				$tabel = "tbl_item_order";
+				$this->m_data->proses_edit($id,$tabel,$data);
+        		$this->session->set_flashdata('message', 'swal("Sukses!", "Data berhasil diedit", "success");');
+
+				redirect('item_order/data_itemorder');
+ 			}
+
+ 		}
+
+ 		function hapus_item_order(){
+
+ 			$id = $this->input->get('id');
+			$this->db->delete('tbl_item_order', array('id' => $id));
+			redirect('item_order/data_itemorder');
  		}
  }
 
