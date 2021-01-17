@@ -17,7 +17,7 @@ class Komplain extends CI_Controller
 
 	public function data_komplain(){
 
-		$data['title'] = "Datae Komplain";
+		$data['title'] = "Data Komplain";
 		$data['sub_title'] = "Data komplain";
 
 		$data['komplain'] = $this->m_data->get_data($tabel='tbl_komplain');

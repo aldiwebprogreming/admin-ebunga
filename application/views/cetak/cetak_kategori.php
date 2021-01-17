@@ -37,7 +37,7 @@ table tr:nth-child(even) {
 		<img src="logo/logo1.png" style='height: 100px; position: absolute; bottom: 50px; left:120 px; top:30px;'>
 
 		<h3 style="text-align: center; margin-bottom: 60px;">LAPORAN DATA <?= $judul ?></h3>
-			<h3 style="text-align: center;">PT.EBUNGA SUSKSES MAKAMUR</h3>
+			<h3 style="text-align: center;">PT.EBUNGA SUSKSES MAKMUR</h3>
 			<p style="text-align: center;font-style: italic;"><strong>Jl.Cemara No.15 Medan Estate, Kabupaten Deliserdang, Sumatera Utara</strong></p>
 			<hr style="border: 3px solid;">
 		<br><br><br>
