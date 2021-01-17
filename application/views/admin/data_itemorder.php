@@ -26,7 +26,7 @@
                                 <div class="card-body">
                             <!--      <a href="<?= base_url() ?>member/tambah_member" class ="btn btn-primary mb-4"> Tambah Member</a>  -->
 
-                                    <a href="<?= base_url() ?>operator/cetak_data" id="" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
+                                    <a href="<?= base_url() ?>item_order/cetak_data" id="" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
 
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

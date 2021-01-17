@@ -94,6 +94,27 @@
 			$this->db->delete('tbl_item_order', array('id' => $id));
 			redirect('item_order/data_itemorder');
  		}
+
+
+ 		function cetak_data(){
+
+ 		$this->load->library('dompdf_gen');
+
+		$data['judul'] = "ITEM ORDER";
+		$data['footer'] = "Laporan data item order dicetak pada tanggal : ";
+		$data['item_order'] = $this->m_data->get_data("tbl_item_order");
+ 		$this->load->view('cetak/cetak_itemorder',$data);
+
+ 		$paper_size ="LEGAL";
+ 		$orientation = "landscape";
+ 		$html = $this->output->get_output();
+ 		$this->dompdf->set_paper($paper_size, $orientation);
+
+ 		$this->dompdf->load_html($html);
+ 		$this->dompdf->render();
+ 		$this->dompdf->stream("cetak_itemorder", array('Attachment' => 0));
+
+ 		}
  }
 
 
