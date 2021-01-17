@@ -134,7 +134,8 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th"></i> <span>Data Master</span></a>
                 <ul class="dropdown-menu">
-                   <li>   <a class="nav-link" href="<?= base_url() ?>customer/data_customer/">Customer</a></li>
+                  <li>   <a class="nav-link" href="<?= base_url() ?>member/data_member/">Member</a></li>
+                  <!--  <li>   <a class="nav-link" href="<?= base_url() ?>customer/data_customer/">Customer</a></li> -->
                      <li> <a class="nav-link" href="<?= base_url() ?>customer_order/data_customer_order/">Customer Order</a></li>
                   <li><a class="nav-link" href="<?= base_url() ?>Komplain/data_komplain/">Komplain</a></li>
 

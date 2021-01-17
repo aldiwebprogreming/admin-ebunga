@@ -24,7 +24,7 @@
                   </div>
                                 
                                 <div class="card-body">
-                                 <a href="<?= base_url() ?>member/tambah_member" class ="btn btn-primary mb-4"> Tambah Member</a> 
+                            <!--      <a href="<?= base_url() ?>member/tambah_member" class ="btn btn-primary mb-4"> Tambah Member</a>  -->
 
                                     <a href="<?= base_url() ?>operator/cetak_data" id="" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
 
@@ -33,22 +33,22 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Usernam</th>
-                                                <th>Full Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Country</th>
+                                                <th>kd Order</th>
+                                                <th>Kd Token Order</th>
+                                                <th>Kd Produk</th>
+                                                <th>Nama Penerima</th>
+                                                <th>Hp Penerima</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                               <th>No</th>
-                                                <th>Usernam</th>
-                                                <th>Full Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Country</th>
+                                                <th>No</th>
+                                                <th>kd Order</th>
+                                                <th>Kd Token Order</th>
+                                                <th>Kd Produk</th>
+                                                <th>Nama Penerima</th>
+                                                <th>Hp Penerima</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </tfoot>
@@ -56,34 +56,25 @@
 
                                             <?php 
                                             $no = 1;
-                                            foreach ($member as $data) {
+                                            foreach ($item_order as $data) {
 
                                              ?>
 
 
-                                             <?php 
-
-                                                $id_coun = $data['country'];
-                                                $country = $this->db->get_where('tbl_country_support', array('id' => $id_coun))->result_array();
-
-                                                foreach ($country as $data_count) {
-                                              
-                                                }
-
-                                             ?>
 
                                             <tr>
                                                 <td><?= $no++; ?></td>
-                                                <td><?= $data['username'] ?></td>
-                                                <td><?= $data['full_name'] ?></td>
-                                                <td><?= $data['email'] ?></td>
-                                                <td><?= $data['phone'] ?></td>
-                                                <td><?= $data_count['name_country'] ?></td>
+                                                <td><?= $data['kd_order'] ?></td>
+                                                <td><?= $data['kd_token_item'] ?></td>
+                                                <td><?= $data['kd_produk'] ?></td>
+                                                <td><?= $data['nama_penerima'] ?></td>
+                                                <td><?= $data['hp_penerima'] ?></td>
                                                 <td>
-                                                    <a href="<?= base_url() ?>member/hapus_member?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
-                                                    <a href="<?= base_url() ?>member/edit_member?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                    <a href="<?= base_url() ?>item_order/hapus_item_order?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
 
-                                                  <a href="<?= base_url() ?>member/detail_member?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                                                    <a href="<?= base_url() ?>item_order/edit_item_order?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+
+                                                  <a href="<?= base_url() ?>item_order/detail_item_order?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
 
                                               
                                             </tr>

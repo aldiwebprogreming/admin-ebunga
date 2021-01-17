@@ -187,6 +187,63 @@
 
 
  }
+
+ 	function edit_member(){
+
+ 
+ 		$data['title'] = "Edit member";
+ 		$data['sub_title'] = "Edit Data Member";
+
+ 		$tabel = "tbl_member";
+ 		$id = $this->input->get('id');
+ 		$data['member'] = $this->m_data->get_det($tabel, $id);
+ 		$data['provinsi'] = $this->m_data->get_data($tabel='tbl_provinsi');
+ 		$data['country'] = $this->m_data->get_data($tabel='tbl_country_support');
+ 		
+ 		$this->load->view('template2/header', $data);
+ 		$this->load->view('admin/edit_member', $data);
+ 		$this->load->view('template2/footer');
+
+
+ 			if ($this->input->post('edit')) {
+					
+					$data = array(
+							
+						'username' => $this->input->post('username'),
+			 			'full_name' => $this->input->post('full_name'),
+			 			'email' =>$this->input->post('email'),
+			 			'phone' =>$this->input->post('phone'),
+			 			'country' =>$this->input->post('country'),
+			 			'provinsi' =>$this->input->post('provinsi'),
+			 			'kabupaten' =>$this->input->post('kabupaten'),
+			 			'kecamatan' =>$this->input->post('kecamatan'),
+			 			'kelurahan' =>$this->input->post('kelurahan'),
+			 			'postal_code' =>$this->input->post('postal_code'),
+			 			'alamat' =>$this->input->post('alamat'),
+			 			'ktp' =>$this->input->post('ktp'),
+			 			'npwp' =>$this->input->post('npwp'),
+			 			'siup' =>$this->input->post('siup'),
+			 			'status' =>$this->input->post('status'),
+			 			'suspend' =>$this->input->post('suspend')
+
+					);
+
+
+					$id = $this->input->get('id');
+					$tabel = "tbl_member";
+					$edit =  $this->m_data->proses_edit($id,$tabel,$data);
+
+					$this->session->set_flashdata('message', 'swal("Sukses!", "Data berhasil diedit", "success");');
+
+					redirect('member/data_member');
+
+
+				}
+
+ 	}
+
+
+ 	
  }
 
  ?>
