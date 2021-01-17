@@ -243,6 +243,26 @@
  	}
 
 
+ 	function cetak_data(){
+
+ 		$this->load->library('dompdf_gen');
+
+		$data['judul'] = "MEMBER EBUNGA";
+		$data['footer'] = "Laporan data member ebunga  dicetak pada tanggal : ";
+		$data['item_order'] = $this->m_data->get_data("tbl_member");
+ 		$this->load->view('cetak/cetak_member',$data);
+
+ 		$paper_size ="LEGAL";
+ 		$orientation = "landscape";
+ 		$html = $this->output->get_output();
+ 		$this->dompdf->set_paper($paper_size, $orientation);
+
+ 		$this->dompdf->load_html($html);
+ 		$this->dompdf->render();
+ 		$this->dompdf->stream("cetak_member", array('Attachment' => 0));
+ 	}
+
+
  	
  }
 
