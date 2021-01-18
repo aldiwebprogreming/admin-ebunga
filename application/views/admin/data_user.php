@@ -32,6 +32,8 @@
 
                                     <a href="<?= base_url() ?>cetak_user/" id="" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
 
+                                      <a href="<?= base_url() ?>temp_order/cetak_excel" id="" class ="btn btn-success mb-4" ><i class="fas fa-print"></i> Cetak Excel</a> 
+
                                   <select style="margin-left: 50%;" id="pilih_user">
                                       <label>Pilih data user</label>
                                      <option>all</option>

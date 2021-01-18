@@ -157,4 +157,67 @@ class Address_list extends CI_Controller
 		$this->load->view('template2/footer');
 	}
 
+
+	function cetak_excel(){
+
+		$data['address_list'] = $this->m_data->get_data($tabel="tbl_address_list");
+
+ 		require(APPPATH. 'PHPExcel/Classes/PHPExcel.php');
+ 		require(APPPATH. 'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
+
+ 		$object = new PHPExcel();
+ 		$object->getProperties()->setCreator("laporan excel");
+ 		$object->getProperties()->setLastModifiedBy("Ebunga");
+ 		$object->getProperties()->setTitle("Laporan data temp order");
+
+
+ 		$object->setActiveSheetIndex(0);
+
+ 		$object->getActiveSheet()->setCellValue('A1','No');
+ 		$object->getActiveSheet()->setCellValue('B1','KODE ADRESS');
+ 		$object->getActiveSheet()->setCellValue('C1','NAME ADDRESS');
+ 		$object->getActiveSheet()->setCellValue('D1','ALAMAT');
+ 		$object->getActiveSheet()->setCellValue('E1','KELURAHAN');
+ 		$object->getActiveSheet()->setCellValue('F1','KECAMATAN');
+ 		$object->getActiveSheet()->setCellValue('G1','KABUPATEN');
+ 		$object->getActiveSheet()->setCellValue('H1','PROVINSI');
+ 		$object->getActiveSheet()->setCellValue('I1','KORDINAT');
+ 		$object->getActiveSheet()->setCellValue('J1','MAIN');
+ 		$object->getActiveSheet()->setCellValue('K1','ACTIVE');
+
+ 		$baris = 2;
+ 		$no = 1;
+
+ 		foreach ($data['adress_list'] as $add) {
+ 			$object->getActiveSheet()->setCellValue('A'.$baris, $no++);
+ 			$object->getActiveSheet()->setCellValue('B'.$baris, $add->kd_address);
+ 			$object->getActiveSheet()->setCellValue('C'.$baris, $add->name_address);
+ 			$object->getActiveSheet()->setCellValue('D'.$baris, $add->alamat);
+ 			$object->getActiveSheet()->setCellValue('E'.$baris, $add->kelurahan);
+ 			$object->getActiveSheet()->setCellValue('F'.$baris, $add->kecamatan);
+ 			$object->getActiveSheet()->setCellValue('G'.$baris, $add->kabupaten);
+ 			$object->getActiveSheet()->setCellValue('H'.$baris, $add->provinsi);
+ 			$object->getActiveSheet()->setCellValue('I'.$baris, $add->kordinat);
+ 			$object->getActiveSheet()->setCellValue('J'.$baris, $add->main);
+ 			$object->getActiveSheet()->setCellValue('K'.$baris, $add->aktive);
+ 			
+ 			
+
+ 		$baris++;
+ 		}
+
+ 		$filename = "Data_address_list".'.xlsx';
+ 		$object->getActiveSheet()->setTitle("Adress List");
+ 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+ 		header('Content-Disposition: attachment; filename="'.$filename.'"'); 
+ 		header('Cache-Control: max-age=0');
+
+ 		$write = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+   		 $write->save('php://output');
+
+   		 exit();
+
+
+	}
+
 }

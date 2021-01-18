@@ -168,6 +168,65 @@ public function hapus_bk_account(){
 		$this->load->view('template2/footer');
 	}
 
+	function cetak_excel(){
+
+		$data['bank'] = $this->m_data->get_data($tabel="tbl_bank_account");
+
+ 		require(APPPATH. 'PHPExcel/Classes/PHPExcel.php');
+ 		require(APPPATH. 'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
+
+ 		$object = new PHPExcel();
+ 		$object->getProperties()->setCreator("laporan excel");
+ 		$object->getProperties()->setLastModifiedBy("Ebunga");
+ 		$object->getProperties()->setTitle("Laporan data bank acount");
+
+
+ 		$object->setActiveSheetIndex(0);
+
+ 		$object->getActiveSheet()->setCellValue('A1','No');
+ 		$object->getActiveSheet()->setCellValue('B1','KODE BANK ACCOUNT');
+ 		$object->getActiveSheet()->setCellValue('C1','TIPE USER');
+ 		$object->getActiveSheet()->setCellValue('D1','ID USER');
+ 		$object->getActiveSheet()->setCellValue('E1','KD BANK');
+ 		$object->getActiveSheet()->setCellValue('F1','ACCOUNT NAME');
+ 		$object->getActiveSheet()->setCellValue('G1','ACCOUNT NUMBER');
+ 		$object->getActiveSheet()->setCellValue('H1','MAIN');
+ 		$object->getActiveSheet()->setCellValue('I1','AKTIVE');
+ 	
+
+ 		$baris = 2;
+ 		$no = 1;
+
+ 		foreach ($data['bank'] as $bank) {
+ 			$object->getActiveSheet()->setCellValue('A'.$baris, $no++);
+ 			$object->getActiveSheet()->setCellValue('B'.$baris, $bank->kd_bank_account);
+ 			$object->getActiveSheet()->setCellValue('C'.$baris, $bank->tipe_user);
+ 			$object->getActiveSheet()->setCellValue('D'.$baris, $bank->id_user);
+ 			$object->getActiveSheet()->setCellValue('E'.$baris, $bank->kd_bank);
+ 			$object->getActiveSheet()->setCellValue('F'.$baris, $bank->account_name);
+ 			$object->getActiveSheet()->setCellValue('G'.$baris, $bank->account_number);
+ 			$object->getActiveSheet()->setCellValue('H'.$baris, $bank->main);
+ 			$object->getActiveSheet()->setCellValue('K'.$baris, $bank->aktive);
+ 			
+ 			
+
+ 		$baris++;
+ 		}
+
+ 		$filename = "data_bank_account".'.xlsx';
+ 		$object->getActiveSheet()->setTitle("Adress List");
+ 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+ 		header('Content-Disposition: attachment; filename="'.$filename.'"'); 
+ 		header('Cache-Control: max-age=0');
+
+ 		$write = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+   		 $write->save('php://output');
+
+   		 exit();
+
+
+	}
+
 
 	}
 
