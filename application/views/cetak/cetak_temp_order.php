@@ -43,100 +43,40 @@ table tr:nth-child(even) {
 		<br><br><br>
 
 	<p><strong> Dicetak Pada Tanggal : <?= date('m-d-Y'); ?></strong></p>
-		
-	<table border="1"  style="font-size: 10px;">
+
+	<table border="1" >
 		<tr>
 			<th>No</th>
-			<th width="">Username</th>
-			<th width="">Full Name</th>
-			<th width="">Email</th>
-			<th width="">Phone</th>
-			<th width="">Country</th>
-			<th width="">Provinsi</th>
-			<th width="">Kabupaten</th>
-			<th width="">Kecamatan</th>
-			<th width="">Kelurahan</th>
-			<th width="">Postal Code</th>
-			<th width="">Alamat</th>
-			<th width="">KTP</th>
-			<th width="">NPWP</th>
-			<th width="">Siup</th>
-			<th width="">Status</th>
-			<th width="">Suspend</th>
-
-		
+			<th width="100">Kode Temp</th>
+			<th width="150">Customer</th>
+			<th width="90">Waktu</th>
+			<th width="120">Kode Produk</th>
+			<th width="90">Qt</th>
+			<th width="90">Total</th>
+			
 		</tr>	
-
-
 
 			<?php 
 				$no = 1;
 
-					foreach ($item_order as $data) {
+					foreach ($temp_order as $data) {
 
 			 ?>
 
-			 <?php 
-
-		      $id_prov = $data['provinsi'];
-		      $prov = $this->db->get_where('tbl_provinsi', array('id_prov' => $id_prov))->result_array();
-		      foreach ($prov as $data_prov) {
-		       
-		      }
-
-		       $id_kab = $data['kabupaten'];
-              $kab = $this->db->get_where('tbl_kabupaten', array('id_kab' => $id_kab))->result_array();
-
-              foreach ($kab as $data_kab) {
-            
-              }
-
-              $id_kec = $data['kecamatan'];
-              $kec = $this->db->get_where('tbl_kecamatan', array('id_kec' => $id_kec))->result_array();
-
-              foreach ($kec as $data_kec) {
-            
-              }
-
-			$id_kel = $data['kelurahan'];
-			  $kel = $this->db->get_where('tbl_kelurahan', array('id_kel' => $id_kel))->result_array();
-
-			  foreach ($kel as $data_kel) {
-
-			  }
-
-
-			  $id_count = $data['country'];
-			  $negara = $this->db->get_where('tbl_country_support', array('id' => $id_count))->result_array();
-
-			  foreach ($negara as $data_neg) {
-
-			  }
-		?>
-
 		<tr>
 			<td><?= $no++; ?></td>
-			<td><?= $data['username']; ?></td>
-			<td><?= $data['full_name'] ?></td>
-			<td><?= $data['email'] ?></td>
-			<td><?= $data['phone'] ?></td>
-			<td><?= $data_neg['name_country'] ?></td>
-			<td><?= $data_prov['nama'] ?></td>
-			<td><?= $data_kab['nama'] ?></td>
-			<td><?= $data_kec['nama'] ?></td>
-			<td><?= $data_kel['nama'] ?></td>
-			<td><?= $data['postal_code'] ?></td>
-			<td><?= $data['alamat'] ?></td>
-			<td><?= $data['ktp'] ?></td>
-			<td><?= $data['npwp'] ?></td>
-			<td><?= $data['siup']?></td>
-			<td><?= $data['status']?></td>
-			<td><?= $data['suspend']?></td>
+			<td><?= $data['kd_temp']; ?></td>
+			<td><?= $data['customer'] ?></td>
+			<td><?= $data['waktu'] ?></td>
+			<td><?= $data['kd_product'] ?></td>
+			<td><?= $data['qt'] ?></td>
+			<td><?= $data['total'] ?></td>
 			
 		</tr>
 
 			<?php } ?>
 	</table>
+
 
 	<div class="" style="position: absolute; top :100%">
 		<hr class="" style="border: 1px solid; color: black;" > 

@@ -136,7 +136,9 @@
                 <ul class="dropdown-menu">
                   <li>   <a class="nav-link" href="<?= base_url() ?>member/data_member/">Member</a></li>
                   <!--  <li>   <a class="nav-link" href="<?= base_url() ?>customer/data_customer/">Customer</a></li> -->
-                     <li> <a class="nav-link" href="<?= base_url() ?>customer_order/data_customer_order/">Customer Order</a></li>
+               <!--    <li> <a class="nav-link" href="<?= base_url() ?>customer_order/data_customer_order/">Customer Order</a></li> -->
+
+                  <li> <a class="nav-link" href="<?= base_url() ?>temp_order/data_temp_order/">Temp Order</a></li>
                   <li><a class="nav-link" href="<?= base_url() ?>Komplain/data_komplain/">Komplain</a></li>
 
                   <li><a class="nav-link" href="<?= base_url() ?>operator/data_operator/">Operator</a></li>
@@ -145,7 +147,7 @@
                   <li>  <a class="nav-link" href="<?= base_url() ?>registrasi_user/data_registrasi/">Registrasi User</a></li>
                    <li>  <a class="nav-link" href="<?= base_url() ?>katagori/sub_kategori/"> Sub Katagori</a></li>
 
-                   <li><a class="nav-link" href="<?= base_url() ?>user/data_user">User</a></li>
+                  <li><a class="nav-link" href="<?= base_url() ?>user/data_user">User</a></li>
 <!-- 
                   <li> <a class="nav-link" href="<?= base_url() ?>produk/data_produk">Produk</a></li>
                   <li>  <a class="nav-link" href="<?= base_url() ?>katagori/data_katagori/"> Katagori Produk</a></li> -->

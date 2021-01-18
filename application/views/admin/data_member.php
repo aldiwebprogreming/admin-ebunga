@@ -56,21 +56,7 @@
 
                                             <?php 
                                             $no = 1;
-                                            foreach ($member as $data) {
-
-                                             ?>
-
-
-                                             <?php 
-
-                                                $id_coun = $data['country'];
-                                                $country = $this->db->get_where('tbl_country_support', array('id' => $id_coun))->result_array();
-
-                                                foreach ($country as $data_count) {
-                                              
-                                                }
-
-                                             ?>
+                                            foreach ($member as $data) { ?>
 
                                             <tr>
                                                 <td><?= $no++; ?></td>
@@ -78,7 +64,7 @@
                                                 <td><?= $data['full_name'] ?></td>
                                                 <td><?= $data['email'] ?></td>
                                                 <td><?= $data['phone'] ?></td>
-                                                <td><?= $data_count['name_country'] ?></td>
+                                                <td><?= $data['country'] ?></td>
                                                 <td>
                                                     <a href="<?= base_url() ?>member/hapus_member?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
                                                     <a href="<?= base_url() ?>member/edit_member?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
