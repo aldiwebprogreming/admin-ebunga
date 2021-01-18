@@ -57,9 +57,9 @@
 						echo "role super admin";
 					}
 				} else{
-					$this->session->set_flashdata('pesan2', '<div class="alert alert-danger alert-dismissible" role="alert">
+					$this->session->set_flashdata('pesan2', '<div class="alert alert-warning alert-dismissible" role="alert">
 						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						  <strong> Akun yang anda masukan salah.</strong>
+						  <strong> Akun yang anda masukan salah!</strong>
 						</div>');
 			redirect('');
 				}
@@ -71,11 +71,11 @@
 
 			$this->session->unset_userdata('username');
 
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong> Anda berhasil keluar.</strong>
-</div>');
-			redirect('');
+			$this->session->set_flashdata('pesan_keluar', '<div class="alert alert-success alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <strong> Anda berhasil keluar.</strong>
+			</div>');
+			redirect('auth/index');
 		}
 
 
