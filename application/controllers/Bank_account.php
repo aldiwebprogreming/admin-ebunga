@@ -170,51 +170,49 @@ public function hapus_bk_account(){
 
 	function cetak_excel(){
 
-		$data['bank'] = $this->m_data->get_data($tabel="tbl_bank_account");
+		$data['bk_account'] = $this->m_data->get_data($tabel='tbl_bank_account');
 
- 		require(APPPATH. 'PHPExcel/Classes/PHPExcel.php');
+		require(APPPATH. 'PHPExcel/Classes/PHPExcel.php');
  		require(APPPATH. 'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
 
  		$object = new PHPExcel();
  		$object->getProperties()->setCreator("laporan excel");
  		$object->getProperties()->setLastModifiedBy("Ebunga");
- 		$object->getProperties()->setTitle("Laporan data bank acount");
+ 		$object->getProperties()->setTitle("Laporan data bank account");
 
 
  		$object->setActiveSheetIndex(0);
 
- 		$object->getActiveSheet()->setCellValue('A1','No');
+ 		$object->getActiveSheet()->setCellValue('A1','NO');
  		$object->getActiveSheet()->setCellValue('B1','KODE BANK ACCOUNT');
  		$object->getActiveSheet()->setCellValue('C1','TIPE USER');
  		$object->getActiveSheet()->setCellValue('D1','ID USER');
- 		$object->getActiveSheet()->setCellValue('E1','KD BANK');
+ 		$object->getActiveSheet()->setCellValue('E1','KODE BANK');
  		$object->getActiveSheet()->setCellValue('F1','ACCOUNT NAME');
  		$object->getActiveSheet()->setCellValue('G1','ACCOUNT NUMBER');
  		$object->getActiveSheet()->setCellValue('H1','MAIN');
- 		$object->getActiveSheet()->setCellValue('I1','AKTIVE');
- 	
+ 		$object->getActiveSheet()->setCellValue('I1','ACTIVE');
 
  		$baris = 2;
  		$no = 1;
 
- 		foreach ($data['bank'] as $bank) {
+ 		foreach ($data['bk_account'] as $data) {
+ 			
  			$object->getActiveSheet()->setCellValue('A'.$baris, $no++);
- 			$object->getActiveSheet()->setCellValue('B'.$baris, $bank->kd_bank_account);
- 			$object->getActiveSheet()->setCellValue('C'.$baris, $bank->tipe_user);
- 			$object->getActiveSheet()->setCellValue('D'.$baris, $bank->id_user);
- 			$object->getActiveSheet()->setCellValue('E'.$baris, $bank->kd_bank);
- 			$object->getActiveSheet()->setCellValue('F'.$baris, $bank->account_name);
- 			$object->getActiveSheet()->setCellValue('G'.$baris, $bank->account_number);
- 			$object->getActiveSheet()->setCellValue('H'.$baris, $bank->main);
- 			$object->getActiveSheet()->setCellValue('K'.$baris, $bank->aktive);
- 			
- 			
+ 			$object->getActiveSheet()->setCellValue('B'.$baris, $data->kd_bank_account);
+ 			$object->getActiveSheet()->setCellValue('C'.$baris, $data->tipe_user);
+ 			$object->getActiveSheet()->setCellValue('D'.$baris, $data->id_user);
+ 			$object->getActiveSheet()->setCellValue('E'.$baris, $data->kode_bank);
+ 			$object->getActiveSheet()->setCellValue('F'.$baris, $data->account_name);
+ 			$object->getActiveSheet()->setCellValue('G'.$baris, $data->account_number);
+ 			$object->getActiveSheet()->setCellValue('G'.$baris, $data->main);
+ 			$object->getActiveSheet()->setCellValue('G'.$baris, $data->active);
 
- 		$baris++;
+ 			$baris++;
  		}
 
  		$filename = "data_bank_account".'.xlsx';
- 		$object->getActiveSheet()->setTitle("Adress List");
+ 		$object->getActiveSheet()->setTitle("Data bank account");
  		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
  		header('Content-Disposition: attachment; filename="'.$filename.'"'); 
  		header('Cache-Control: max-age=0');
@@ -223,6 +221,62 @@ public function hapus_bk_account(){
    		 $write->save('php://output');
 
    		 exit();
+
+
+
+		
+
+ 		// require(APPPATH. 'PHPExcel/Classes/PHPExcel.php');
+ 		// require(APPPATH. 'PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
+
+ 		// $object = new PHPExcel();
+ 		// $object->getProperties()->setCreator("laporan excel");
+ 		// $object->getProperties()->setLastModifiedBy("Ebunga");
+ 		// $object->getProperties()->setTitle("Laporan data temp order");
+
+
+ 		// $object->setActiveSheetIndex(0);
+
+ 		// $object->getActiveSheet()->setCellValue('A1','No');
+ 		// $object->getActiveSheet()->setCellValue('B1','KODE BANK ACCOUNT');
+ 		// $object->getActiveSheet()->setCellValue('C1','TIPE USER');
+ 		// $object->getActiveSheet()->setCellValue('D1','ID USER');
+ 		// $object->getActiveSheet()->setCellValue('E1','KD BANK');
+ 		// $object->getActiveSheet()->setCellValue('F1','ACCOUNT NAME');
+ 		// $object->getActiveSheet()->setCellValue('G1','ACCOUNT NUMBER');
+ 		// $object->getActiveSheet()->setCellValue('J1','MAIN');
+ 		// $object->getActiveSheet()->setCellValue('K1','ACTIVE');
+
+ 		// $baris = 2;
+ 		// $no = 1;
+
+ 		// foreach ($data['bk_account'] as $data_bank) {
+ 		// 	$object->getActiveSheet()->setCellValue('A'.$baris, $no++);
+ 		// 	$object->getActiveSheet()->setCellValue('B'.$baris, $data_bank->kd_bank_account);
+ 		// 	$object->getActiveSheet()->setCellValue('C'.$baris, $data_bank->tipe_user);
+ 		// 	$object->getActiveSheet()->setCellValue('D'.$baris, $data_bank->id_user);
+ 		// 	$object->getActiveSheet()->setCellValue('E'.$baris, $data_bank->kd_bank);
+ 		// 	$object->getActiveSheet()->setCellValue('F'.$baris, $data_bank->account_name);
+ 		// 	$object->getActiveSheet()->setCellValue('G'.$baris, $data_bank->account_number);
+ 		// 	$object->getActiveSheet()->setCellValue('H'.$baris, $data_bank->main);
+ 		// 	$object->getActiveSheet()->setCellValue('I'.$baris, $data_bank->active);
+ 		
+ 			
+ 			
+
+ 		// $baris++;
+ 		// }
+
+ 		// $filename = "data_bank_account".'.xlsx';
+ 		// $object->getActiveSheet()->setTitle("Bank Account");
+ 		// header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+ 		// header('Content-Disposition: attachment; filename="'.$filename.'"'); 
+ 		// header('Cache-Control: max-age=0');
+
+ 		// $write = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+   // 		 $write->save('php://output');
+
+   // 		 exit();
 
 
 	}

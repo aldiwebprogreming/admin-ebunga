@@ -76,13 +76,19 @@
                                                 <td><?= $data['kd_bank'] ?></td>
                                                 <td><?= $data['account_name'] ?></td>
                                                 <td>
+
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                     <a href="<?= base_url() ?>bank_account/hapus_bk_account?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                      </span>
 
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="<?= base_url() ?>bank_account/edit_bk_account?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                  </span>
 
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
                                                    <a href="<?= base_url() ?>bank_account/detail?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
-
-                                              
+                                                 </span>
+                                                
                                             </tr>
 
                                             <!-- Modal -->

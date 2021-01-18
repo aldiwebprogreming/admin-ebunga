@@ -77,9 +77,13 @@
                               <td><?= $data['total'] ?></td>
 
                               <td>
+                                <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                 <a href="<?= base_url() ?>temp_order/hapus_temp_order?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                              </span>
 
+                               <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                 <a href="<?= base_url() ?>temp_order/edit_temp_order?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                              </span>
 
 
                               <!--      <a href="<?= base_url() ?>promo/detail?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a> -->

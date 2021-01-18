@@ -73,10 +73,13 @@
                                                 <td><?= $data['disc'] ?></td>
                                                 <td><?= $data['order_time'] ?></td>
                                                 <td>
-                                                    
+                                                    <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                      <a href="<?= base_url() ?>customer_order/hapus_customer_order?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                      </span>
 
+                                                    <span class="d-inline-block" data-toggle="tooltip" data-title="Edit"> 
                                                     <a href="<?= base_url() ?>customer_order/edit_customer_order?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                  </span>
                                                 </td>
                                               
                                             </tr>
