@@ -68,11 +68,13 @@
                                                 <td><?= $data['deks_variant'] ?></td>
                                                 <td><?= $data['active'] ?></td>
                                                 <td>
-                                                  
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                     <a href="<?= base_url() ?>varian_produk/hapus_varian?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                  </span>
 
-
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="<?= base_url() ?>varian_produk/edit_varian?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a> 
+                                                  </span>
                                                                            
 
                                         <?php } ?>
@@ -92,10 +94,12 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-         <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
+          <!-- <center>
+          Copyright &copy; <?= date('Y') ?> <div class="bullet"></div> <a href="https://www.ebunga.com/" target="_blank">wwww.ebunga.com</a>
+          </center> -->
         </div>
         <div class="footer-right">
-          2.3.0
+         
         </div>
       </footer>
     </div>

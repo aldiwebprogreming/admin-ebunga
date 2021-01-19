@@ -66,8 +66,12 @@
                                                 <td><?= $data['deks'] ?></td>
                                                 <td><?= $data['active'] ?></td>
                                                 <td>
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                     <a href="<?= base_url() ?>katagori/hapus_kategori_produk?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                  </span>
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="<?= base_url() ?>katagori/edit?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                  </span>
                                                 </td>
                                               
                                             </tr>
@@ -91,7 +95,7 @@
          <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+        
         </div>
       </footer>
     </div>

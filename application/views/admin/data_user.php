@@ -88,9 +88,12 @@
                                                 <td><?= $data['last_login'] ?></td>
                                                  <td><?= $data['active'] ?></td>
                                                 <td>
-                                                    
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                      <a href="<?= base_url() ?>user/hapus_user?id=<?= $data['id'] ?>" class="btn btn-danger"  onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                   </span>
+                                                    <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="<?= base_url() ?>user/edit_user?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                  </span>
                                                 </td>
                                               
                                             </tr>
@@ -115,14 +118,15 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-         <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
+        <!--    Copyright &copy; <?= date('Y') ?> <div class="bullet"></div> <a href="https://nauval.in/">www.ebunga.com</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+          
         </div>
       </footer>
     </div>
   </div>
+  
 
   
 

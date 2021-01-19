@@ -62,10 +62,13 @@
                                                 <td><?= $data['nama_payment'] ?></td>
                                                 <td><?= $data['scope'] ?></td>
                                                 <td>
-                                                    
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                      <a href="<?= base_url() ?>payment_geteway/hapus_payment?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                   </span>
 
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                       <a href="<?= base_url() ?>payment_geteway/edit_payment?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                    </span>
                                                 </td>
                                               
                                             </tr>
@@ -89,7 +92,7 @@
          <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+         
         </div>
       </footer>
     </div>

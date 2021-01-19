@@ -85,13 +85,17 @@
                                 <?php } ?>
                               </td>
                               <td>
+                               <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                 <a href="<?= base_url() ?>promo/hapus_promo?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                              </span>
 
+                               <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                 <a href="<?= base_url() ?>promo/edit_promo?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                              </span>
 
-
+                                 <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
                                    <a href="<?= base_url() ?>promo/detail?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
-
+                                  </span>
                              <!--    <a href="#" type="button" class="btn btn-success"  data-toggle="modal" id="modal" data-target="#<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a> -->
 
                               </td>
@@ -124,7 +128,7 @@
           Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
         </div>
         <div class="footer-right">
-          2.3.0
+      
         </div>
       </footer>
     </div>

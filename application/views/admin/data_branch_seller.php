@@ -30,7 +30,7 @@
                    
                                 
                                 <div class="card-body">
-                                 <a href="<?= base_url() ?>Branch_seller/tambah_branch" class ="btn btn-primary mb-4"> Tambah Branc Seller</a> 
+                                 <a href="<?= base_url() ?>Branch_seller/tambah_branch" class ="btn btn-primary mb-4"> Tambah Branch Seller</a> 
 
                                   <a href="<?= base_url() ?>branch_seller/cetak_data" id="" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
 
@@ -180,7 +180,7 @@
          <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+         
         </div>
       </footer>
     </div>

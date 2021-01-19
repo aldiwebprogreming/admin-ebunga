@@ -64,12 +64,17 @@
                                                 <td><?= $data['kd_produk'] ?></td>
                                                 <td><?= $data['active'] ?></td>
                                             
-                                                <td>
+                                                <td> 
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                     <a href="<?= base_url() ?>variasi_produk/hapus_variasi_produk?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
-
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="<?= base_url() ?>variasi_produk/edit_variasi_produk?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                  </span>
 
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
                                                     <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a>
+                                                  </span>
 
 
                                               

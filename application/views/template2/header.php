@@ -186,7 +186,7 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-user"></i> <span>Seller</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="<?= base_url() ?>seller/data_seller/">Data Seller</a></li>
+                <!--   <li><a class="nav-link" href="<?= base_url() ?>seller/data_seller/">Data Seller</a></li> -->
                   <li>  <a class="nav-link" href="<?= base_url() ?>branch_seller/data_branch_seller/">Data Branch Seller</a></li>
                 </ul>
               </li>

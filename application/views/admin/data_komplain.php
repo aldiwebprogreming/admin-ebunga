@@ -68,11 +68,14 @@
                                                 <td><?= $data['seller_id'] ?></td>
                                                 <td><?= $data['waktu_komplain'] ?></td>
                                                 <td>
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                     <a href="<?= base_url() ?>komplain/hapus_komplain?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                  </span>
 
                                                    <!--  <a href="<?= base_url() ?>address_list/edit_address_list?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
- -->
+ -->                                                <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a>
+                                                  </span>
 
 
                                               
@@ -144,7 +147,7 @@
          <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+          
         </div>
       </footer>
     </div>

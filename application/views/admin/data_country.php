@@ -70,7 +70,7 @@
 
                                                    <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                       <a href="<?= base_url() ?>country_support/edit_country?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
-                                                    </span>s
+                                                    </span>
                                                 </td>
                                               
                                             </tr>
@@ -94,7 +94,7 @@
          <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+         
         </div>
       </footer>
     </div>

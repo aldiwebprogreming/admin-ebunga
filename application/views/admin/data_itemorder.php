@@ -72,11 +72,17 @@
                                                 <td><?= $data['nama_penerima'] ?></td>
                                                 <td><?= $data['hp_penerima'] ?></td>
                                                 <td>
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Hapus">
                                                     <a href="<?= base_url() ?>item_order/hapus_item_order?id=<?= $data['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash"></i></a>
+                                                  </span>
 
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                     <a href="<?= base_url() ?>item_order/edit_item_order?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
+                                                  </span>
 
+                                                   <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
                                                   <a href="<?= base_url() ?>item_order/detail_item_order?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                                                </span>
 
                                               
                                             </tr>
@@ -105,7 +111,7 @@
          <!--  Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
         </div>
         <div class="footer-right">
-          2.3.0
+         
         </div>
       </footer>
     </div>
