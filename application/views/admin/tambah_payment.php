@@ -35,6 +35,18 @@
                               <input type="text" name="scope" class="form-control" required="">
                             </div>
 
+                           <div class="mb-3">
+                              <label for="exampleFormControlTextarea1" class="form-label">Token</label>
+                              <input type="text" name="token" class="form-control" required="">
+                            </div>
+
+                             <div class="mb-3">
+                              <label for="exampleFormControlTextarea1" class="form-label">API</label>
+                              <input type="text" name="api" class="form-control" required="">
+                            </div>
+
+
+
                             <div class="mb-3">
                                  <input type="submit" name="kirim" class="btn btn-primary" value="Save">
                                 <a href="<?= base_url() ?>payment_geteway/data_payment" class ="btn btn-success"> Kembali </a>

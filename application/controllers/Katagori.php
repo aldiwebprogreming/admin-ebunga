@@ -304,6 +304,21 @@ class Katagori extends CI_Controller
 	}
 
 
+		function cetak_excel(){
+
+		$data['sub_kategori'] = $this->m_data->get_data('tbl_sub_kategori');
+		$this->load->view('excel/cetak_sub_kategori', $data);
+	}
+
+
+		function cetak_excel1(){
+
+		$data['kategori_produk'] = $this->m_data->get_data('tbl_kategori_produk');
+		$this->load->view('excel/cetak_kategori_produk', $data);
+	}
+
+
+
 
 }
 

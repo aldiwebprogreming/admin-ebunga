@@ -272,6 +272,12 @@
 	}
 
 
+	function cetak_excel(){
+
+		$data['branch_seller'] = $this->m_data->get_data('tbl_branch_seller');
+		$this->load->view('excel/cetak_branch_seller', $data);
+	}
+
 
 
 	}

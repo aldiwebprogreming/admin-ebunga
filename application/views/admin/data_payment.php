@@ -69,6 +69,11 @@
                                                      <span class="d-inline-block" data-toggle="tooltip" data-title="Edit">
                                                       <a href="<?= base_url() ?>payment_geteway/edit_payment?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-pen"></i></a>
                                                     </span>
+
+                                                     <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
+                                                      <a href="<?= base_url() ?>payment_geteway/detail_payment?id=<?= $data['id'] ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                                                    </span>
+
                                                 </td>
                                               
                                             </tr>

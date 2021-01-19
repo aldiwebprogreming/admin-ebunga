@@ -210,6 +210,15 @@ function cetak_data(){
 	}
 
 
+	function cetak_excel(){
+
+		$data['promo'] = $this->m_data->get_data('tbl_promo');
+		$this->load->view('excel/cetak_promo', $data);
+	}
+
+
+
+
 }
 
  ?>

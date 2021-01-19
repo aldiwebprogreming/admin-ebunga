@@ -141,6 +141,13 @@
 	}
 
 
+	function cetak_excel(){
+
+		$data['variant_produk'] = $this->m_data->get_data('tbl_variant');
+		$this->load->view('excel/cetak_varian_produk', $data);
+	}
+
+
 
 		}
 

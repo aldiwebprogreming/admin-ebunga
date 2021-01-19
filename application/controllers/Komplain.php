@@ -61,4 +61,12 @@ class Komplain extends CI_Controller
  		$this->dompdf->render();
  		$this->dompdf->stream("cetak_komplain", array('Attachment' => 0));
 	}
+
+
+	function cetak_excel(){
+
+		$data['komplain'] = $this->m_data->get_data('tbl_komplain');
+
+ 		$this->load->view('excel/cetak_komplain', $data);
+	}
 }

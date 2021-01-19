@@ -119,6 +119,12 @@ class Registrasi_user extends CI_controller
 
 		}
 
+	function cetak_excel(){
+
+		$data['registrasiuser'] = $this->m_data->get_data('tbl_registrasi_user');
+		$this->load->view('excel/cetak_registrasiuser', $data);
+	}
+
 
 
 

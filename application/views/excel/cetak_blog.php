@@ -19,9 +19,10 @@ header("Content-Disposition: attachment; filename=data blog.xls");
          <th>Kategori</th>
 	</tr>
 	<?php
+	$no = 1;
 	foreach ($blog as $data) { ?>
 	<tr>
-		<td>$no++</td>
+		<td><?= $no++; ?></td>
 		<td><?= $data['kd_article'] ?></td>
 		<td><?= $data['title']  ?></td>
 		<td><?= $data['sub_title'] ?></td>

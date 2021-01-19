@@ -195,6 +195,17 @@
  	}
 
 
+ 	function cetak_excel(){
+
+
+ 			$data['member'] = $this->m_data->get_data('tbl_member');
+
+ 			$this->load->view('excel/cetak_member', $data);
+
+
+ 	}
+
+
  	
 }
 

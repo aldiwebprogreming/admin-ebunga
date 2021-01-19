@@ -155,6 +155,13 @@ function cetak_data(){
  		$this->dompdf->stream("cetak_oprator", array('Attachment' => 0));
 	}
 
+	function cetak_excel(){
+
+		$data['operator'] = $this->m_data->get_data('tbl_operator');
+
+ 		$this->load->view('excel/cetak_operator', $data);
+	}
+
 
 	}
 

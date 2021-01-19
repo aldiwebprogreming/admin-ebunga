@@ -140,6 +140,14 @@ class Country_support extends CI_Controller{
  		$this->dompdf->stream("cetak_country", array('Attachment' => 0));
 	}
 
+
+	function cetak_excel(){
+
+		$data['country'] = $this->m_data->get_data('tbl_country_support');
+		$this->load->view('excel/cetak_country', $data);
+	}
+
+
 	
 }
 

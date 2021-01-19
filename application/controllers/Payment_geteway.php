@@ -50,7 +50,10 @@
 
 						'kd_payment'=> $this->input->post('kd_payment'),
 						'nama_payment' => $this->input->post('name_payment'),
-						'scope' => $this->input->post('scope')
+						'scope' => $this->input->post('scope'),
+						'api' => $this->input->post('api'),
+						'token' => $this->input->post('token'),
+						'active' =>1
 					];
 
 
@@ -89,7 +92,10 @@
 
 						'kd_payment'=> $this->input->post('kd_payment'),
 						'nama_payment' => $this->input->post('name_payment'),
-						'scope' => $this->input->post('scope')
+						'scope' => $this->input->post('scope'),
+						'api' => $this->input->post('api'),
+						'token' => $this->input->post('token'),
+						'active' => $this->input->post('active')
 					];
 
 					$tabel= "tbl_payment_gateway";
@@ -102,6 +108,22 @@
 
 				}
 
+
+			}
+
+
+			function detail_payment(){
+
+
+				$id = $this->input->get('id');
+
+				$data['payment'] = $this->m_data->get_det('tbl_payment_gateway', $id);
+
+				$data['title'] = "Detail payment getewey";
+				$data['sub_title'] = "Data Payment Geteway";
+				$this->load->view('template2/header', $data);
+				$this->load->view('detail/det_payment', $data);
+				$this->load->view('template2/footer');
 
 			}
 
@@ -137,7 +159,12 @@
 	}
 
 
+	function cetak_excel(){
 
+		$data['payment'] = $this->m_data->get_data('tbl_payment_gateway');
+
+ 		$this->load->view('excel/cetak_payment', $data);
+	}
 
 	
 

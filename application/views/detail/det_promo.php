@@ -52,7 +52,7 @@
                               <hr>
 
                             <div class="mb-3">
-                              <label for="" class="form-label"><strong>Id Sellere</strong></label>
+                              <label for="" class="form-label"><strong>Id Seller</strong></label>
                            <p> <?= $data['id_seller'] ?></p>
                                
                             </div>
@@ -74,7 +74,7 @@
 
                             <div class="mb-3">
                               <label for="" class="form-label"><strong>Start Aktive</strong></label>
-                             "<?= $data['start_active'] ?>
+                             <p><?= $data['start_active'] ?></p>
                                
                             </div>
                               <hr>

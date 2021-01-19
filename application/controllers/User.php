@@ -163,6 +163,12 @@
 		$this->load->view('template2/footer');
 	}
 
+	function cetak_excel(){
+
+		$data['user'] = $this->m_data->get_data('tbl_user');
+		$this->load->view('excel/cetak_user', $data);
+	}
+
 
 
 	}
