@@ -79,7 +79,7 @@
                                                   </span>
 
                                                    <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
-                                                    <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a>
+                                                     <a href="<?= base_url() ?>operator/detail_operator?id=<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
                                                   </span>
                                               
                                             </tr>

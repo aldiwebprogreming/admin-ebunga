@@ -108,6 +108,25 @@
 
 			}
 
+
+
+	function detail_operator(){
+
+
+		$data['title'] = "Detail operator";
+		$data['sub_title'] = "Detail Oprator";
+
+		$id = $this->input->get('id');
+		$data['operator'] = $this->m_data->get_det($tabel = "tbl_operator", $id);
+
+		$this->load->view('template2/header', $data);
+		$this->load->view('detail/det_operator', $data);
+		$this->load->view('template2/footer');
+
+
+
+	}
+
 public function hapus_operator(){
 
 		$id = $this->input->get('id');
