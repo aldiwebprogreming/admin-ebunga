@@ -26,7 +26,7 @@
                             <div class="card-body">
                                  <a href="<?= base_url() ?>registrasi_user/cetak_data" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
 
-                                   <a href="<?= base_url() ?>temp_order/cetak_excel" id="" class ="btn btn-success mb-4" ><i class="fas fa-file-excel"></i> Cetak Excel</a> 
+                                   <a href="<?= base_url() ?>registrasi_user/cetak_excel" id="" class ="btn btn-success mb-4" ><i class="fas fa-file-excel"></i> Cetak Excel</a> 
 
 
                                 <div class="table-responsive">

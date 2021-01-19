@@ -29,7 +29,7 @@
                                     <a href="<?= base_url() ?>operator/cetak_data" id="" class ="btn btn-danger mb-4" target="_blank"><i class="fas fa-print"></i> Cetak PDF</a> 
 
 
-                                      <a href="<?= base_url() ?>temp_order/cetak_excel" id="" class ="btn btn-success mb-4" ><i class="fas fa-file-excel"></i> Cetak Excel</a> 
+                                      <a href="<?= base_url() ?>operator/cetak_excel" id="" class ="btn btn-success mb-4" ><i class="fas fa-file-excel"></i> Cetak Excel</a> 
 
                                 <div class="table-responsive">file-excel
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -81,54 +81,8 @@
                                                    <span class="d-inline-block" data-toggle="tooltip" data-title="Detail">
                                                     <a href="#" type="button" class="btn btn-success"  data-toggle="modal" data-target="#mymodal<?= $data['id'] ?>"> <i class="fas fa-eye"></i></a>
                                                   </span>
-
-
                                               
                                             </tr>
-
-                                            <!-- Modal -->
-<div class="modal fade" id="mymodal<?= $data['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Detail Operator</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       
-     
-       <b>Username</b><p><?= $data['username'] ?></p> 
-       <hr>
-        <b>Nama Lengkap</b> <p><?= $data['nama_lengkap'] ?></p> 
-        <hr>
-        <b>No Hp</b> <p><?= $data['hp'] ?></p> 
-        <hr>
-        <b>Alamat</b> <p><?= $data['alamat'] ?></p> 
-        <hr>
-        <b>Posisi</b> <p><?= $data['posisi'] ?></p> 
-        <hr>
-        <b>Bio</b> <p><?= $data['bio'] ?></p> 
-         <hr> 
-         <b>Active</b> <p><?= $data['active'] ?></p> 
-    
-       
-
-
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
                                         <?php } ?>
                                             
