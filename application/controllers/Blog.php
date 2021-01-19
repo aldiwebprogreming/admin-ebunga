@@ -176,6 +176,13 @@
 	}
 
 
+	function cetak_excel(){
+
+		$data['blog'] = $this->m_data->get_data('tbl_blog');
+		$this->load->view('excel/cetak_blog', $data);
+	}
+
+
 }
 
 
