@@ -107,9 +107,9 @@
 
 
 	      if ($status == 'disable') {
-	  	$this->email->message('Permintaan anda untuk menjadi Branch Seller berhasil di persetujui.');
+	  	$this->email->message('<h2>Permintaan anda untuk menjadi Branch Seller berhasil di persetujui.</h2>');
 	      } else {
-	  	$this->email->message('Mohon maaf Branch Seller anda untuk saat ini di Non-Active kan.');
+	  	$this->email->message('<h2>Mohon maaf Branch Seller anda untuk saat ini di Non-Active kan.</h2>');
 	      }
 
        
